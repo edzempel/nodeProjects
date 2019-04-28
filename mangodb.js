@@ -2,9 +2,13 @@
 console.log('How is it going?')
 const mongodb = require('mongodb')
 const MongoClient = mongodb.MongoClient
+const ObjectID = mongodb.ObjectID
 
 const connectionURL = 'mongodb://127.0.0.1:27017'
 const dataBaseName = 'firstDatabase'
+const id = new ObjectID()
+console.log(id)
+console.log(id.getTimestamp())
 
 MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) => {
     if (error) {
@@ -38,28 +42,29 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
 
     //insert 3 tasks into a new tasks collection
     // insert 3 documents
-    db.collection('tasks').insertMany([
-        {
-            task: 'eat vegeatables',
-            dueDate: 'Monday',
-            completed: false
-        },
-        {
-            task: 'buy a puppy',
-            dueDate: 'Wednesday',
-            completed: false
-        },
-        {
-            task: 'go to the moon',
-            dueDate: 'Friday',
-            completed: true
-        }
-    ],(error,result) =>{
-        if(error){
-            console.log('Unable to save to the database.')
-        }
-        console.log(result.ops)
-    })
+    // db.collection('tasks').insertMany([
+    //     {
+    //         task: 'eat vegeatables',
+    //         dueDate: 'Monday',
+    //         completed: false
+    //     },
+    //     {
+    //         task: 'buy a puppy',
+    //         dueDate: 'Wednesday',
+    //         completed: false
+    //     },
+    //     {
+    //         task: 'go to the moon',
+    //         dueDate: 'Friday',
+    //         completed: true
+    //     }
+    // ],(error,result) =>{
+    //     if(error){
+    //         console.log('Unable to save to the database.')
+    //     }
+    //     console.log(result.ops)
+    // })
+
 
 
 })
