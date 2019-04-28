@@ -9,6 +9,8 @@ const dataBaseName = 'firstDatabase'
 const id = new ObjectID()
 console.log(id)
 console.log(id.getTimestamp())
+console.log(id.id.length) // the length of the file
+console.log(id.toHexString().length)
 
 MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) => {
     if (error) {
@@ -16,14 +18,14 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
     }
     const db = client.db(dataBaseName)
 
-    db.collection('users').insertOne({
-        _id: id,
-        name: 'Steve',
-        address: '1204 Western Ave',
-        city: 'Xandadu',
-        state: 'Kentucky',
-        apples: 14
-        })
+    // db.collection('users').insertOne({
+    //     _id: id,
+    //     name: 'Steve',
+    //     address: '1204 Western Ave',
+    //     city: 'Xandadu',
+    //     state: 'Kentucky',
+    //     apples: 14
+    //     })
 
     // db.collection('users').insertMany([
     //     {
