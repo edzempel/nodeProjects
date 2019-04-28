@@ -16,13 +16,14 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
     }
     const db = client.db(dataBaseName)
 
-    // db.collection('users').insertOne({
-    //     name: 'Steve',
-    //     address: '1204 Western Ave',
-    //     city: 'Xandadu',
-    //     state: 'Kentucky',
-    //     apples: 14
-    //     })
+    db.collection('users').insertOne({
+        _id: id,
+        name: 'Steve',
+        address: '1204 Western Ave',
+        city: 'Xandadu',
+        state: 'Kentucky',
+        apples: 14
+        })
 
     // db.collection('users').insertMany([
     //     {
@@ -68,3 +69,5 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
 
 
 })
+
+// process.exit()
