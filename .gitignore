@@ -173,3 +173,4 @@ node_modules/sparse-bitfield/LICENSE
 node_modules/sparse-bitfield/README.md
 node_modules/sparse-bitfield/index.js
 node_modules/sparse-bitfield/package.json
+./vscode
